@@ -17,7 +17,7 @@ function getStore() {
                 for (let obj in data) {
                     numSeasons.push(data[obj].season)
                 }
-                // find highest season number possible
+                // find highest possible season number
                 maxSeasons = Math.max(...numSeasons)
                 // validate user input
                 if (s <= 0 || s > maxSeasons) {
@@ -30,13 +30,13 @@ function getStore() {
                 // loop through each season number
                 for (let i = 1; i <= maxSeasons; i++) {
                     let numEpisodes = []
-                    // create list of all episode numbers for the season
+                    // create list of all episode numbers for season
                     for (let obj in data) {
                         if (data[obj].season == i) {
                             numEpisodes.push(data[obj.episode])
                         }
                     }
-                    // find highest episode number possible for the season
+                    // find highest possible episode number for season
                     let maxEpisodes = Math.max(...numEpisodes)
                     // validate user input
                     if (s == i && ep > maxEpisodes) {
