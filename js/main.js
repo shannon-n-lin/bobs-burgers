@@ -47,6 +47,19 @@ function getStore() {
                 }
             }
 
+            for (let item in data) {
+                // find the requested season and episode 
+                if (data[item].season == s && data[item].episode == ep) {
+                    // add the image to the DOM
+                    document.querySelector('img').src = data[item].image
+                    // check if name is undefined, otherwise add to DOM
+                    if (data[item].name == undefined) {
+                        document.querySelector('h2').innerText = 'This episode didn\'\t have a store next door.'
+                    } else {
+                        document.querySelector('h2').innerText = data[item].name
+                    }
+                }
+            }
       })
 
       .catch(err => {
